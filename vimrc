@@ -34,7 +34,7 @@ Plugin 'matchit.zip'
 Plugin 'CSApprox'
 Plugin 'timcharper/textile.vim'
 Plugin 'jimenezrick/vimerl'
-Plugin 'rson/vim-conque'
+Plugin 'basepi/vim-conque'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/syntastic'
 Plugin 'JSON.vim'
@@ -235,8 +235,14 @@ if has("autocmd")
   au!
 
   autocmd FileType make     set noexpandtab
-  autocmd FileType python   set noexpandtab
 
+  autocmd FileType python   set expandtab
+  autocmd FileType python   set autoindent
+  autocmd FileType python   set formatoptions=cq
+  autocmd FileType python   set textwidth=78 shiftwidth=4
+  autocmd FileType python   set softtabstop=4 tabstop=4
+
+  autocmd FileType go set expandtab
   " erlang for opscode
   autocmd FileType erlang set expandtab
   autocmd FileType erlang set softtabstop=4 tabstop=4 shiftwidth=4
